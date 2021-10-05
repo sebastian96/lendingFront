@@ -17,7 +17,7 @@ npm run start
 - Python
 - Flask
 
-### Run Frontend
+### Run Backend
 ``` 
 git clone https://github.com/sebastian96/lendingFront.git
 cd lendingFront/loan
