@@ -1,3 +1,6 @@
 body {
     overflow: hidden;
+    background: rgb(2,0,36);
+    background: linear-gradient(160deg, rgba(2,0,36,1) 0%, rgba(76,166,190,1) 50%, rgba(0,212,255,1) 100%);
+    color: #fff;
 }

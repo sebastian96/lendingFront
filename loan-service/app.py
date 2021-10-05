@@ -1,6 +1,8 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 PORT = 4000
 HOST = '0.0.0.0'
@@ -43,14 +45,12 @@ def getLoan(client_id):
 
 @app.route('/requestLoan', methods=['POST'])
 def requestLoan():
-    request_amount = request.json['request_amount']
-    business_name = request.json['business_name']
-    tax_id = request.json['tax_id']
+    request_amount = int(request.json['client_request_amoun'])
+    business_name = request.json['client_business_name']
+    tax_id = request.json['client_tax_id']
     client_id = request.json['client_id']
     amount = 50000
     clientFound = [client for client in clients if client['client_id'] == client_id]
-
-    print(clientFound)
 
     if(len(clientFound) > 0):
         currentClient = clientFound[0]
@@ -64,6 +64,8 @@ def requestLoan():
         currentClient['client_business_name'] = business_name
         currentClient['client_tax_id'] = tax_id
         currentClient['client_request_amoun'] = request_amount
+
+        print(currentClient)
 
         return jsonify({'loan': currentClient, 'status': 200})
     
