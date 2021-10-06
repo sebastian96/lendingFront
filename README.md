@@ -2,7 +2,7 @@
 
 [Documentation](https://drive.google.com/drive/folders/1RXaYAmVnGUuns5NExqtYn9vIPLf8HsjF?usp=sharing)
 
-### Tools Frontend:
+### Frontend Tools:
 - React
 - Axios
 - Node JS / npm
@@ -19,7 +19,7 @@ npm install
 npm run start
 ```
 
-### Tools Backend:
+### Backend Tools:
 - Python 3.9.7
 - Flask
 - Flask-cors
