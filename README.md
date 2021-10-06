@@ -1,5 +1,7 @@
 # **Senior back end written technical test**
 
+[Documentation](https://drive.google.com/drive/folders/1RXaYAmVnGUuns5NExqtYn9vIPLf8HsjF?usp=sharing)
+
 ### Tools Frontend:
 - React
 - Axios
@@ -20,6 +22,6 @@ npm run start
 ### Run Backend
 ``` 
 git clone https://github.com/sebastian96/lendingFront.git
-cd lendingFront/loan
+cd lendingFront/loan-service
 python app.py
 ```
