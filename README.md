@@ -22,6 +22,6 @@ npm run start
 ### Run Backend
 ``` 
 git clone https://github.com/sebastian96/lendingFront.git
-cd lendingFront/loan
+cd lendingFront/loan-service
 python app.py
 ```
