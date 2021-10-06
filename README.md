@@ -2,15 +2,15 @@
 
 [Documentation](https://drive.google.com/drive/folders/1RXaYAmVnGUuns5NExqtYn9vIPLf8HsjF?usp=sharing)
 
-### Frontend Tools:
-- React
-- Axios
-- Node JS / npm
-
 ### Clone repository
 ``` 
 git clone https://github.com/sebastian96/lendingFront.git
 ```
+
+### Frontend Tools:
+- React
+- Axios
+- Node JS / npm
 
 ### Run Frontend
 ``` 
