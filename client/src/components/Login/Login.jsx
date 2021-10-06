@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Login.css'
 
 const Login = (props) => {
@@ -35,11 +35,20 @@ const Login = (props) => {
         const user = USERS.find(user => user.email === form.email && user.password === form.password);
 
         if(user) {
+            localStorage.setItem('user', JSON.stringify(user));
             return props.history.push('/apply-loan')
         }
 
         return setAlertClass('d-block');
     }
+
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'))
+
+        if(user) {
+            return props.history.push('/apply-loan')
+        }
+    })
 
     return (
         <main className="login">

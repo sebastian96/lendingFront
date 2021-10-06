@@ -23,15 +23,7 @@ clients = [
         'client_request_amoun': None,
         'client_is_logged': False,
         'client_loan_status': None
-    },
-    {
-        'client_id': 3,
-        'client_business_name': None,
-        'client_tax_id': None,
-        'client_request_amoun': None,
-        'client_is_logged': True,
-        'client_loan_status': None
-    },
+    }
 ]
 
 @app.route('/loan/<client_id>')
@@ -39,7 +31,7 @@ def getLoan(client_id):
     clientFound = [client for client in clients if client['client_id'] == int(client_id)]
 
     if len(clientFound) > 0:
-        return jsonify({'loan': clientFound, 'status': 200})
+        return jsonify({'loan': clientFound[0], 'status': 200})
     
     return jsonify({'message': 'the client was not found', 'status': 404})
 
@@ -64,8 +56,6 @@ def requestLoan():
         currentClient['client_business_name'] = business_name
         currentClient['client_tax_id'] = tax_id
         currentClient['client_request_amoun'] = request_amount
-
-        print(currentClient)
 
         return jsonify({'loan': currentClient, 'status': 200})
     
