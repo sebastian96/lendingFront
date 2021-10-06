@@ -10,9 +10,9 @@ const Loan = (props) => {
     const [alertForm, setAlertForm] = useState('d-none');
     const [form, setForm] = useState({
         client_id: user ? user.id : undefined,
-        client_business_name: '',
-        client_tax_id: '',
-        client_request_amoun: ''
+        loan_business_name: '',
+        loan_tax_id: '',
+        loan_request_amoun: ''
     })
 
     const setValues = (e) => {
@@ -24,9 +24,9 @@ const Loan = (props) => {
 
     const applyLoan = async (e) => {
         e.preventDefault();
-        const {client_request_amoun, client_business_name, client_tax_id} = form;
+        const {loan_request_amoun, loan_business_name, loan_tax_id} = form;
 
-        if(!isNaN(Number(client_request_amoun)) && client_business_name !== '' && client_tax_id !== '') {
+        if(!isNaN(Number(loan_request_amoun)) && loan_business_name !== '' && loan_tax_id !== '') {
             const response = await axios.post('http://localhost:4000/requestLoan', form)
     
             setLoan(response.data);
@@ -68,14 +68,14 @@ const Loan = (props) => {
             const { loan, status } = res.data;
 
             if(status === 200) {
-                if(loan.client_loan_status) {
+                if(loan.loan_status) {
                     setLoan(res.data);
                     setDisableBtn('disabled');
                     setForm({
                         client_id: user.id,
-                        client_business_name: loan.client_business_name,
-                        client_request_amoun: loan.client_request_amoun,
-                        client_tax_id: loan.client_tax_id
+                        loan_business_name: loan.loan_business_name,
+                        loan_request_amoun: loan.loan_request_amoun,
+                        loan_tax_id: loan.loan_tax_id
                     })
                 }
             }
@@ -88,7 +88,7 @@ const Loan = (props) => {
             <div className="row">
                 <div className="align-items-center col-12 d-flex justify-content-between mb-5 mt-5">
                     <h2>Apply to a loan</h2>
-                    <button className="btn btn-secondary" onClick={logout}>Logout</button>
+                    <button className="btn btn-info" onClick={logout}>Logout</button>
                 </div>
             </div>
             <form className="row" onSubmit={applyLoan}>
@@ -97,39 +97,39 @@ const Loan = (props) => {
                     <p className="mb-0">check the form, and then click apply again</p>
                 </div>
                 <div className="col-12 col-md-4 p-3">
-                    <label id="client_business_name" className="mb-2">Bussines name</label>
+                    <label id="loan_business_name" className="mb-2">Bussines name</label>
                     <input 
-                        id="client_business_name"
+                        id="loan_business_name"
                         type="text" 
                         className="form-control" 
                         placeholder="e.g. Adidas"
-                        name="client_business_name"
+                        name="loan_business_name"
                         onChange={setValues}
-                        value={form.client_business_name}
+                        value={form.loan_business_name}
                     />
                 </div>
                 <div className="col-12 col-md-4 p-3">
-                    <label id="client_tax_id" className="mb-2">Tax Id</label>
+                    <label id="loan_tax_id" className="mb-2">Tax Id</label>
                     <input 
-                        id="client_tax_id"
+                        id="loan_tax_id"
                         type="text" 
                         className="form-control" 
                         placeholder="e.g. 555-555-555"
-                        name="client_tax_id"
+                        name="loan_tax_id"
                         onChange={setValues}
-                        value={form.client_tax_id}
+                        value={form.loan_tax_id}
                     />
                 </div>
                 <div className="col-12 col-md-4 p-3">
-                    <label id="client_request_amoun" className="mb-2">Amount</label>
+                    <label id="loan_request_amoun" className="mb-2">Amount</label>
                     <input 
-                        id="client_request_amoun"
+                        id="loan_request_amoun"
                         type="text" 
                         className="form-control" 
                         placeholder="e.g. 100000"
-                        name="client_request_amoun"
+                        name="loan_request_amoun"
                         onChange={setValues}
-                        value={form.client_request_amoun}
+                        value={form.loan_request_amoun}
                     />
                 </div>
                 <button type="submit" className={`btn btn-outline-light d-block m-auto mt-4 w-25 ${disableBtn}`}>Apply</button>

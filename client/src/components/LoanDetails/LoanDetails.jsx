@@ -11,19 +11,19 @@ const LoanDetails = ({loan}) => {
                     {loan &&
                         <>
                             <li className="active bg-info list-group-item list-group-item-action text-capitalize text-center">
-                                <b className="text-white">{loan.client_business_name}</b>
+                                <b className="text-white">{loan.loan_business_name}</b>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 <b>Tax number</b>
-                                <span>{loan.client_tax_id}</span>
+                                <span>{loan.loan_tax_id}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 <b>Amount</b>
-                                <span>{formatter.format(loan.client_request_amoun)}</span>
+                                <span>{formatter.format(loan.loan_request_amoun)}</span>
                             </li>
                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                 <b>Status</b>
-                                <span>{loan.client_loan_status}</span>
+                                <span>{loan.loan_status}</span>
                             </li>
                         </>
                     }
