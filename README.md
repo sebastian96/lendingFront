@@ -2,7 +2,7 @@
 
 [Documentation](https://drive.google.com/drive/folders/1RXaYAmVnGUuns5NExqtYn9vIPLf8HsjF?usp=sharing)
 
-### Tools Frontend:
+### Frontend Tools:
 - React
 - Axios
 - Sass
@@ -15,7 +15,7 @@ cd lendingFront/client
 npm run start
 ```
 
-### Tools Backend:
+### Backend Tools:
 - Python
 - Flask
 
