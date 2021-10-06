@@ -13,7 +13,6 @@ clients = [
         'client_business_name': None,
         'client_tax_id': None,
         'client_request_amoun': None,
-        'client_is_logged': True,
         'client_loan_status': None
     },
     {
@@ -21,7 +20,6 @@ clients = [
         'client_business_name': None,
         'client_tax_id': None,
         'client_request_amoun': None,
-        'client_is_logged': False,
         'client_loan_status': None
     }
 ]
